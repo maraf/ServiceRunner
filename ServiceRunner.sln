@@ -1,0 +1,41 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinService", "WinService\WinService.csproj", "{C7DF6BE3-C652-452B-BC02-3AD93D28C846}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GUI", "GUI\GUI.csproj", "{0E3B056B-DC28-4076-82D0-1FEE2F3181F6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Model", "Model\Model.csproj", "{93C42CEA-23F4-4B68-9D6B-7E31D52780CB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestConsole", "TestConsole\TestConsole.csproj", "{C82CF8D9-6EA5-49FB-87D8-3C1EB628ED9E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C7DF6BE3-C652-452B-BC02-3AD93D28C846}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C7DF6BE3-C652-452B-BC02-3AD93D28C846}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C7DF6BE3-C652-452B-BC02-3AD93D28C846}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C7DF6BE3-C652-452B-BC02-3AD93D28C846}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0E3B056B-DC28-4076-82D0-1FEE2F3181F6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0E3B056B-DC28-4076-82D0-1FEE2F3181F6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0E3B056B-DC28-4076-82D0-1FEE2F3181F6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0E3B056B-DC28-4076-82D0-1FEE2F3181F6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{93C42CEA-23F4-4B68-9D6B-7E31D52780CB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{93C42CEA-23F4-4B68-9D6B-7E31D52780CB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{93C42CEA-23F4-4B68-9D6B-7E31D52780CB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{93C42CEA-23F4-4B68-9D6B-7E31D52780CB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C82CF8D9-6EA5-49FB-87D8-3C1EB628ED9E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C82CF8D9-6EA5-49FB-87D8-3C1EB628ED9E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C82CF8D9-6EA5-49FB-87D8-3C1EB628ED9E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C82CF8D9-6EA5-49FB-87D8-3C1EB628ED9E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		VisualSVNWorkingCopyRoot = .
+	EndGlobalSection
+EndGlobal

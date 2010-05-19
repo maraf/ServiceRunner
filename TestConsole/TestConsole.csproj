@@ -32,7 +32,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Configuration.Install" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.ServiceProcess" />
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
@@ -51,6 +54,10 @@
     <ProjectReference Include="..\GUI\GUI.csproj">
       <Project>{0E3B056B-DC28-4076-82D0-1FEE2F3181F6}</Project>
       <Name>GUI</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WinService\WinService.csproj">
+      <Project>{C7DF6BE3-C652-452B-BC02-3AD93D28C846}</Project>
+      <Name>WinService</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

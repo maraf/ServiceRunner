@@ -39,8 +39,8 @@
             // winServiceInstaller
             // 
             this.winServiceInstaller.Description = "Windows service for ServiceRunner";
-            this.winServiceInstaller.DisplayName = "WinServiceRunner";
-            this.winServiceInstaller.ServiceName = "WinServiceRunner";
+            this.winServiceInstaller.DisplayName = "ServiceRunner";
+            this.winServiceInstaller.ServiceName = "ServiceRunner";
             // 
             // ProjectInstaller
             // 

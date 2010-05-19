@@ -61,6 +61,7 @@
     <Compile Include="ProjectInstaller.Designer.cs">
       <DependentUpon>ProjectInstaller.cs</DependentUpon>
     </Compile>
+    <Compile Include="ServiceInstaller.cs" />
     <Compile Include="WinService.cs">
       <SubType>Component</SubType>
     </Compile>

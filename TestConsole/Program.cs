@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
 using System.IO;
+using System.Text;
 using System.Threading;
 
 using ServiceRunner.Loader;
@@ -15,9 +15,10 @@ namespace ServiceRunner.TestConsole
         static void Main(string[] args)
         {
             //TestLogger();
-            TestProcessManager();
+            //TestProcessManager();
             //TestStringCutting();
             //TestSingleProcessWrapper();
+            //TestServiceInstallation(InstallType.Uninstall);
 
             Console.WriteLine("Press key to exit");
             Console.ReadKey(true);
@@ -78,6 +79,40 @@ namespace ServiceRunner.TestConsole
             Thread.Sleep(1000);
             pw.Terminate();
             Console.WriteLine("Test SingleProcessWrapper has finished");
+        }
+
+        enum InstallType { Install, Uninstall, Both };
+
+        static void TestServiceInstallation(InstallType type)
+        {
+            Console.WriteLine("Testing ServiceInstallation ...");
+
+            string svcPath = @"C:\Documents and Settings\Administrator\Dokumenty\Visual Studio 2008\Projects\ServiceRunner\WinService\bin\Debug\ServiceRunner.exe";
+            string svcName = "ServiceRunner";
+            string svcDispName = "ServiceRunner";
+            ServiceInstaller c = new ServiceInstaller();
+
+            if (type.Equals(InstallType.Uninstall) || type.Equals(InstallType.Both))
+            {
+                Console.WriteLine("First, uninstall service ...");
+                c.UninstallService(svcName);
+                Console.WriteLine("Service has been uninstalled");
+            }
+
+            if (type.Equals(InstallType.Both))
+            {
+                Console.ReadKey(true);
+            }
+
+            if (type.Equals(InstallType.Install) || type.Equals(InstallType.Both))
+            {
+                Console.WriteLine("Now, install service ...");
+                c = new ServiceInstaller();
+                c.InstallService(svcPath, svcName, svcDispName);
+                Console.WriteLine("Service has been installed");
+            }
+
+            Console.WriteLine("Test ServiceInstallation has finished");
         }
     }
 }

@@ -12,13 +12,15 @@ namespace ServiceRunner.TestConsole
 {
     class Program
     {
+        enum InstallType { Install, Uninstall, Both, ProjectInstaller };
+
         static void Main(string[] args)
         {
             //TestLogger();
-            //TestProcessManager();
+            TestProcessManager();
             //TestStringCutting();
             //TestSingleProcessWrapper();
-            //TestServiceInstallation(InstallType.Uninstall);
+            //TestServiceInstallation(InstallType.Install);
 
             Console.WriteLine("Press key to exit");
             Console.ReadKey(true);
@@ -81,8 +83,6 @@ namespace ServiceRunner.TestConsole
             Console.WriteLine("Test SingleProcessWrapper has finished");
         }
 
-        enum InstallType { Install, Uninstall, Both };
-
         static void TestServiceInstallation(InstallType type)
         {
             Console.WriteLine("Testing ServiceInstallation ...");
@@ -110,6 +110,12 @@ namespace ServiceRunner.TestConsole
                 c = new ServiceInstaller();
                 c.InstallService(svcPath, svcName, svcDispName);
                 Console.WriteLine("Service has been installed");
+            }
+
+            if (type.Equals(InstallType.ProjectInstaller))
+            {
+                Console.WriteLine("Installing service using ProjectInstaller");
+                new ProjectInstaller();
             }
 
             Console.WriteLine("Test ServiceInstallation has finished");

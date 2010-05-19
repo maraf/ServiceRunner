@@ -74,26 +74,17 @@ namespace ServiceRunner.Util
 
         public void Start()
         {
-            StdOutputWrite(String.Format("{0}\t{1}{2}", String.Format(TimePattern, DateTime.Now), "Starting process", Environment.NewLine));
+            StdOutputWrite("Starting process");
             process.Start();
             Thread t = new Thread(new ThreadStart(InvokeReadFromOutput));
             t.Start();
-        }
-
-        private void InvokeReadFromOutput()
-        {
-            new MethodInvoker(ReadStdOut).BeginInvoke(null, null);
-            new MethodInvoker(ReadStdErr).BeginInvoke(null, null);
         }
 
         public void Terminate()
         {
             if (!process.HasExited)
             {
-                if (StdOutput.BaseStream != null)
-                {
-                    StdOutputWrite(String.Format("{0}\t{1}{2}", String.Format(TimePattern, DateTime.Now), "Killing process", Environment.NewLine));
-                }
+                StdOutputWrite("Killing process");
                 StdOutput.Close();
                 process.Kill();
             }
@@ -107,7 +98,13 @@ namespace ServiceRunner.Util
             }
         }
 
-        private void OnProcessComplete(object sender, EventArgs e)
+        protected virtual void InvokeReadFromOutput()
+        {
+            new MethodInvoker(ReadStdOut).BeginInvoke(null, null);
+            new MethodInvoker(ReadStdErr).BeginInvoke(null, null);
+        }
+
+        protected virtual void OnProcessComplete(object sender, EventArgs e)
         {
             StdOutputWrite(String.Format("{0}\t{1}", String.Format(TimePattern, DateTime.Now), "Process finished"));
             StdOutput.Close();
@@ -137,7 +134,7 @@ namespace ServiceRunner.Util
             }
         }
 
-        private void StdOutputWrite(string data)
+        protected virtual void StdOutputWrite(string data)
         {
             if (stdOutput.BaseStream != null)
             {
@@ -145,7 +142,7 @@ namespace ServiceRunner.Util
             }
         }
 
-        private void ErrOutputWrite(string data)
+        protected virtual void ErrOutputWrite(string data)
         {
             if (errOutput.BaseStream != null)
             {

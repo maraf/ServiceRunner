@@ -88,21 +88,13 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="app.config" />
     <None Include="Messages.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Messages1.Designer.cs</LastGenOutput>
     </None>
-    <None Include="Properties\Settings.settings">
-      <Generator>SettingsSingleFileGenerator</Generator>
-      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
-    </None>
-    <Compile Include="Properties\Settings.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Settings.settings</DependentUpon>
-      <DesignTimeSharedInput>True</DesignTimeSharedInput>
-    </Compile>
     <Compile Include="TaskDetail.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -116,6 +108,15 @@
       <Project>{93C42CEA-23F4-4B68-9D6B-7E31D52780CB}</Project>
       <Name>Model</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DataContainer_MoveNextHS2.png" />
+    <None Include="Resources\DeleteHS2.png" />
+    <None Include="Resources\EditTableHS2.png" />
+    <None Include="Resources\Help2.png" />
+    <None Include="Resources\PropertiesHS2.png" />
+    <None Include="Resources\RestartHS2.png" />
+    <None Include="Resources\StopHS2.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

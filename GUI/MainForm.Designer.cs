@@ -75,7 +75,7 @@
             // WinServiceController
             // 
             this.WinServiceController.MachineName = "admin-cd6a83814";
-            this.WinServiceController.ServiceName = "WinServiceRunner";
+            this.WinServiceController.ServiceName = "ServiceRunner";
             // 
             // tsMainMenu
             // 
@@ -109,7 +109,7 @@
             this.tslWinServiceStatus.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.tslWinServiceStatus.Name = "tslWinServiceStatus";
             this.tslWinServiceStatus.Size = new System.Drawing.Size(70, 22);
-            this.tslWinServiceStatus.Text = "Stopped ...";
+            this.tslWinServiceStatus.Text = "Stopped";
             // 
             // tssSeparator1
             // 
@@ -118,7 +118,7 @@
             // 
             // tsbStartWinService
             // 
-            this.tsbStartWinService.Image = ((System.Drawing.Image)(resources.GetObject("tsbStartWinService.Image")));
+            this.tsbStartWinService.Image = global::WindowsGUI.Properties.Resources.StartIcon;
             this.tsbStartWinService.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbStartWinService.Name = "tsbStartWinService";
             this.tsbStartWinService.Size = new System.Drawing.Size(51, 22);
@@ -128,7 +128,7 @@
             // tsbStopWinService
             // 
             this.tsbStopWinService.Enabled = false;
-            this.tsbStopWinService.Image = ((System.Drawing.Image)(resources.GetObject("tsbStopWinService.Image")));
+            this.tsbStopWinService.Image = global::WindowsGUI.Properties.Resources.StopIcon;
             this.tsbStopWinService.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbStopWinService.Name = "tsbStopWinService";
             this.tsbStopWinService.Size = new System.Drawing.Size(49, 22);
@@ -137,7 +137,7 @@
             // 
             // tsbRestart
             // 
-            this.tsbRestart.Image = ((System.Drawing.Image)(resources.GetObject("tsbRestart.Image")));
+            this.tsbRestart.Image = global::WindowsGUI.Properties.Resources.RestartIcon;
             this.tsbRestart.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbRestart.Name = "tsbRestart";
             this.tsbRestart.Size = new System.Drawing.Size(63, 22);
@@ -147,7 +147,7 @@
             // tsbSettings
             // 
             this.tsbSettings.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.tsbSettings.Image = ((System.Drawing.Image)(resources.GetObject("tsbSettings.Image")));
+            this.tsbSettings.Image = global::WindowsGUI.Properties.Resources.PropertiesIcon;
             this.tsbSettings.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbSettings.Name = "tsbSettings";
             this.tsbSettings.Size = new System.Drawing.Size(66, 22);
@@ -156,7 +156,7 @@
             // tsbAbout
             // 
             this.tsbAbout.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.tsbAbout.Image = ((System.Drawing.Image)(resources.GetObject("tsbAbout.Image")));
+            this.tsbAbout.Image = global::WindowsGUI.Properties.Resources.HelpIcon;
             this.tsbAbout.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbAbout.Name = "tsbAbout";
             this.tsbAbout.Size = new System.Drawing.Size(56, 22);
@@ -369,15 +369,17 @@
             // 
             // tsmiEdit
             // 
+            this.tsmiEdit.Image = global::WindowsGUI.Properties.Resources.EditIcon;
             this.tsmiEdit.Name = "tsmiEdit";
-            this.tsmiEdit.Size = new System.Drawing.Size(116, 22);
+            this.tsmiEdit.Size = new System.Drawing.Size(152, 22);
             this.tsmiEdit.Text = "&Edit";
             this.tsmiEdit.Click += new System.EventHandler(this.tsmiEdit_Click);
             // 
             // tsmiDelete
             // 
+            this.tsmiDelete.Image = global::WindowsGUI.Properties.Resources.DeleteIcon;
             this.tsmiDelete.Name = "tsmiDelete";
-            this.tsmiDelete.Size = new System.Drawing.Size(116, 22);
+            this.tsmiDelete.Size = new System.Drawing.Size(152, 22);
             this.tsmiDelete.Text = "&Delete";
             this.tsmiDelete.Click += new System.EventHandler(this.tsmiDelete_Click);
             // 
@@ -391,6 +393,7 @@
             this.Controls.Add(this.tsMainMenu);
             this.Name = "MainForm";
             this.Text = "ServiceRunner";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
             this.tsMainMenu.ResumeLayout(false);
             this.tsMainMenu.PerformLayout();
             this.ssStatus.ResumeLayout(false);

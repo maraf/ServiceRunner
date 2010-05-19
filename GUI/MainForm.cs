@@ -372,6 +372,11 @@ namespace ServiceRunner.GUI
             OpenProfileDetail(p);
         }
 
+        private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            ConfigLoader.SaveToSource(ConfigLoader.Configuration.Path);
+        }
+
         /*private void btnEnableProfile_Click(object sender, EventArgs e)
         {
             if (StringFormats.DisableStatus.Equals(btnEnableProfile.Text))

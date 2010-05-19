@@ -52,7 +52,8 @@ namespace ServiceRunner.GUI
         public void InitializeLoader()
         {
             // Mozna zde nebude default!
-            ConfigLoader = new XmlLoader(Messages.Default.ConfigurationFilePath);
+            // URCITE HODIT DO SETTINGS.RESX
+            ConfigLoader = new XmlLoader(@"C:\Temp\test.xml");
 
             cobProfiles.Items.Clear();
             foreach (Profile item in ConfigLoader.Configuration.Profiles)

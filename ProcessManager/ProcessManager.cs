@@ -66,6 +66,7 @@ namespace ServiceRunner.Util
             log = new Logger(true);
             runProcessWrappers = new Dictionary<string, ProcessWrapper>();
             stopProcessWrappers = new Dictionary<string, ProcessWrapper>();
+            // URCITE HODIT DO SETTINGS.RESX
             rootPath = @"C:\Temp";
             pathToConfig = rootPath + @"\test.xml";
             taskLogFileNamePattern = @"{0}\{1:yyyy-MM-dd}_{2}.log";

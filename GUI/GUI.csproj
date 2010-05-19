@@ -55,11 +55,6 @@
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Messages1.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTimeSharedInput>True</DesignTimeSharedInput>
-      <DependentUpon>Messages.settings</DependentUpon>
-    </Compile>
     <Compile Include="ProfileDetail.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -82,6 +77,10 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="Settings.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="TaskDetail.resx">
       <DependentUpon>TaskDetail.cs</DependentUpon>
     </EmbeddedResource>
@@ -91,10 +90,11 @@
       <DesignTime>True</DesignTime>
     </Compile>
     <None Include="app.config" />
-    <None Include="Messages.settings">
-      <Generator>SettingsSingleFileGenerator</Generator>
-      <LastGenOutput>Messages1.Designer.cs</LastGenOutput>
-    </None>
+    <Compile Include="Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Settings.resx</DependentUpon>
+    </Compile>
     <Compile Include="TaskDetail.cs">
       <SubType>Form</SubType>
     </Compile>

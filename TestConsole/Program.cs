@@ -6,7 +6,6 @@ using System.Threading;
 
 using ServiceRunner.Loader;
 using ServiceRunner.Model;
-using ServiceRunner.ProcessUtil;
 using ServiceRunner.Util;
 
 namespace ServiceRunner.TestConsole
@@ -16,10 +15,11 @@ namespace ServiceRunner.TestConsole
         static void Main(string[] args)
         {
             //TestLogger();
-            //TestProcessWrapper();
+            TestProcessManager();
             //TestStringCutting();
-            TestSingleProcessWrapper();
+            //TestSingleProcessWrapper();
 
+            Console.WriteLine("Press key to exit");
             Console.ReadKey(true);
         }
 
@@ -31,80 +31,21 @@ namespace ServiceRunner.TestConsole
             log.AddWarn(typeof(Program), "Some warning.");
             log.AddNote(typeof(Program), "Not important note.");
             log.Dispose();
-            Console.WriteLine("Logger OK");
+            Console.WriteLine("Test Logger has finished");
         }
 
-        static void TestProcessWrapper()
+        static void TestProcessManager()
         {
-            Console.WriteLine("Testing ProcessWrapper ...");
+            Console.WriteLine("Testing ProcessManager ...");
 
-            ConfigurationLoader loader;
-            Dictionary<string, ProcessWrapper> processWrappers;
+            ProcessManager manager = new ProcessManager();
+            manager.Start();
+            Console.WriteLine("Press key to run stop script");
+            Console.ReadKey(true);
+            Console.WriteLine("Starting stop script");
+            manager.Stop();
 
-            string rootPath;
-            string pathToConfig;
-            string taskLogFileNamePattern;
-
-            Logger log = new Logger(true);
-            processWrappers = new Dictionary<string, ProcessWrapper>();
-            rootPath = @"C:\Temp";
-            pathToConfig = rootPath + @"\test.xml";
-            taskLogFileNamePattern = @"{0}\{1:yyyy-MM-dd}_{2}.log";
-
-            loader = new XmlLoader(pathToConfig);
-
-            if (!Directory.Exists(rootPath + @"\profiles"))
-            {
-                Directory.CreateDirectory(rootPath + @"\profiles");
-            }
-            foreach (Profile p in loader.Configuration.Profiles)
-            {
-                string profile = rootPath + @"\profiles\" + p.Name.Replace(" ", "-");
-                if (!p.Disabled)
-                {
-                    if (!Directory.Exists(profile))
-                    {
-                        Directory.CreateDirectory(profile);
-
-                    }
-                    log.AddNote(typeof(Program), String.Format("Tasks.Count = {0}", p.Tasks.Count));
-                    foreach (SingleTask t in p.Tasks)
-                    {
-                        if (!t.Disabled)
-                        {
-                            string task = String.Format(taskLogFileNamePattern, profile, DateTime.Now, t.Name.Replace(" ", "-"));
-                            log.AddNote(typeof(Program), task);
-                            StreamWriter writer;
-                            if (File.Exists(task))
-                            {
-                                log.AddNote(typeof(Program), "Log exists");
-                                writer = new StreamWriter(File.Open(task, FileMode.Append));
-                            }
-                            else
-                            {
-                                log.AddNote(typeof(Program), "Log doesn't exist");
-                                writer = new StreamWriter(File.Open(task, FileMode.Create));
-                            }
-                            log.AddNote(typeof(Program), String.Format("{0}", writer.ToString()));
-                            log.AddNote(typeof(Program), "Creating Wrapper");
-                            ProcessWrapper pw = new ProcessWrapper();
-                            log.AddNote(typeof(Program), "Wrapper created");
-                            pw.FileName = t.RunScript;
-                            pw.WorkingDirectory = profile;
-                            pw.Arguments = t.RunArguments;
-                            pw.StdOutput = writer;
-                            pw.ErrOutput = writer;
-                            pw.TimePattern = "{0:hh:mm:ss}";
-                            log.AddNote(typeof(Program), "Starting process");
-                            pw.Start();
-                            log.AddNote(typeof(Program), "Adding to dictionary");
-                            processWrappers.Add(task, pw);
-                        }
-                    }
-                }
-            }
-
-            Console.WriteLine("ProcessWrapper OK");
+            Console.WriteLine("Test ProcessManager has finished");
         }
 
         static void TestStringCutting()
@@ -136,6 +77,7 @@ namespace ServiceRunner.TestConsole
             Console.WriteLine("\"Exit\" has been sent");
             Thread.Sleep(1000);
             pw.Terminate();
+            Console.WriteLine("Test SingleProcessWrapper has finished");
         }
     }
 }

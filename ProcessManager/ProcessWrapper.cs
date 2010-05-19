@@ -4,14 +4,14 @@ using System.Text;
 using System.IO;
 using System.ComponentModel;
 using System.Threading;
-
-using System.Diagnostics;
 using System.Windows.Forms;
 
-namespace ServiceRunner.ProcessUtil
+using System.Diagnostics;
+
+namespace ServiceRunner.Util
 {
     /// <summary>
-    /// Obaluje proces a uklada vystup automaticky do proudu.
+    /// Obaluje proces a uklada vystup do zadanych proudu.
     /// </summary>
     public class ProcessWrapper
     {
@@ -74,7 +74,7 @@ namespace ServiceRunner.ProcessUtil
 
         public void Start()
         {
-            StdOutput.WriteLine(String.Format("{0}\t{1}", String.Format(TimePattern, DateTime.Now), "Starting process"));
+            StdOutputWrite(String.Format("{0}\t{1}{2}", String.Format(TimePattern, DateTime.Now), "Starting process", Environment.NewLine));
             process.Start();
             Thread t = new Thread(new ThreadStart(InvokeReadFromOutput));
             t.Start();
@@ -92,7 +92,7 @@ namespace ServiceRunner.ProcessUtil
             {
                 if (StdOutput.BaseStream != null)
                 {
-                    StdOutput.WriteLine(String.Format("{0}\t{1}", String.Format(TimePattern, DateTime.Now), "Killing process"));
+                    StdOutputWrite(String.Format("{0}\t{1}{2}", String.Format(TimePattern, DateTime.Now), "Killing process", Environment.NewLine));
                 }
                 StdOutput.Close();
                 process.Kill();
@@ -109,7 +109,7 @@ namespace ServiceRunner.ProcessUtil
 
         private void OnProcessComplete(object sender, EventArgs e)
         {
-            StdOutput.WriteLine(String.Format("{0}\t{1}", String.Format(TimePattern, DateTime.Now), "Process finished"));
+            StdOutputWrite(String.Format("{0}\t{1}", String.Format(TimePattern, DateTime.Now), "Process finished"));
             StdOutput.Close();
         }
 
@@ -139,12 +139,18 @@ namespace ServiceRunner.ProcessUtil
 
         private void StdOutputWrite(string data)
         {
-            StdOutput.WriteLine(String.Format("{0}\t{1}", String.Format(TimePattern, DateTime.Now), data));
+            if (stdOutput.BaseStream != null)
+            {
+                StdOutput.WriteLine(String.Format("{0}\t{1}", String.Format(TimePattern, DateTime.Now), data));
+            }
         }
 
         private void ErrOutputWrite(string data)
         {
-            ErrOutput.WriteLine(String.Format("{0}\t{1}", String.Format(TimePattern, DateTime.Now), data));
+            if (errOutput.BaseStream != null)
+            {
+                ErrOutput.WriteLine(String.Format("{0}\t{1}", String.Format(TimePattern, DateTime.Now), data));
+            }
         }
     }
 }

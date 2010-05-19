@@ -96,7 +96,7 @@
             this.tbxName.Location = new System.Drawing.Point(76, 6);
             this.tbxName.Name = "tbxName";
             this.tbxName.Size = new System.Drawing.Size(365, 20);
-            this.tbxName.TabIndex = 5;
+            this.tbxName.TabIndex = 1;
             // 
             // tbxRunArguments
             // 
@@ -105,7 +105,7 @@
             this.tbxRunArguments.Location = new System.Drawing.Point(10, 109);
             this.tbxRunArguments.Name = "tbxRunArguments";
             this.tbxRunArguments.Size = new System.Drawing.Size(431, 20);
-            this.tbxRunArguments.TabIndex = 7;
+            this.tbxRunArguments.TabIndex = 3;
             // 
             // tbxStopArguments
             // 
@@ -114,7 +114,7 @@
             this.tbxStopArguments.Location = new System.Drawing.Point(10, 213);
             this.tbxStopArguments.Name = "tbxStopArguments";
             this.tbxStopArguments.Size = new System.Drawing.Size(431, 20);
-            this.tbxStopArguments.TabIndex = 11;
+            this.tbxStopArguments.TabIndex = 5;
             // 
             // btnClose
             // 
@@ -122,7 +122,7 @@
             this.btnClose.Location = new System.Drawing.Point(361, 280);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(75, 23);
-            this.btnClose.TabIndex = 12;
+            this.btnClose.TabIndex = 9;
             this.btnClose.Text = "Close";
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
@@ -133,7 +133,7 @@
             this.btnSave.Location = new System.Drawing.Point(280, 280);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(75, 23);
-            this.btnSave.TabIndex = 13;
+            this.btnSave.TabIndex = 8;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
@@ -144,7 +144,7 @@
             this.btnSaveAndClose.Location = new System.Drawing.Point(160, 280);
             this.btnSaveAndClose.Name = "btnSaveAndClose";
             this.btnSaveAndClose.Size = new System.Drawing.Size(103, 23);
-            this.btnSaveAndClose.TabIndex = 14;
+            this.btnSaveAndClose.TabIndex = 7;
             this.btnSaveAndClose.Text = "Save and Close";
             this.btnSaveAndClose.UseVisualStyleBackColor = true;
             this.btnSaveAndClose.Click += new System.EventHandler(this.btnSaveAndClose_Click);
@@ -155,7 +155,7 @@
             this.cbxDisabled.Location = new System.Drawing.Point(10, 251);
             this.cbxDisabled.Name = "cbxDisabled";
             this.cbxDisabled.Size = new System.Drawing.Size(67, 17);
-            this.cbxDisabled.TabIndex = 15;
+            this.cbxDisabled.TabIndex = 6;
             this.cbxDisabled.Text = "Disabled";
             this.cbxDisabled.UseVisualStyleBackColor = true;
             // 
@@ -168,7 +168,7 @@
             this.fsrStopScript.MinimumSize = new System.Drawing.Size(200, 31);
             this.fsrStopScript.Name = "fsrStopScript";
             this.fsrStopScript.Size = new System.Drawing.Size(431, 31);
-            this.fsrStopScript.TabIndex = 17;
+            this.fsrStopScript.TabIndex = 4;
             this.fsrStopScript.Value = "";
             // 
             // fsrRunScript
@@ -180,7 +180,7 @@
             this.fsrRunScript.MinimumSize = new System.Drawing.Size(200, 31);
             this.fsrRunScript.Name = "fsrRunScript";
             this.fsrRunScript.Size = new System.Drawing.Size(431, 31);
-            this.fsrRunScript.TabIndex = 16;
+            this.fsrRunScript.TabIndex = 2;
             this.fsrRunScript.Value = "";
             // 
             // TaskDetail

@@ -5,11 +5,11 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>9.0.30729</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{C82CF8D9-6EA5-49FB-87D8-3C1EB628ED9E}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <ProjectGuid>{A9E5489E-1422-46E0-8853-1A5BADDAB4D8}</ProjectGuid>
+    <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>TestConsole</RootNamespace>
-    <AssemblyName>TestConsole</AssemblyName>
+    <RootNamespace>ServiceRunner</RootNamespace>
+    <AssemblyName>ProcessManager</AssemblyName>
     <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -33,24 +33,19 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Program.cs" />
+    <Compile Include="Logger.cs" />
+    <Compile Include="ProcessManager.cs" />
+    <Compile Include="ProcessWrapper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Model\Model.csproj">
       <Project>{93C42CEA-23F4-4B68-9D6B-7E31D52780CB}</Project>
       <Name>Model</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\ProcessManager\ProcessManager.csproj">
-      <Project>{A9E5489E-1422-46E0-8853-1A5BADDAB4D8}</Project>
-      <Name>ProcessManager</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\GUI\GUI.csproj">
-      <Project>{0E3B056B-DC28-4076-82D0-1FEE2F3181F6}</Project>
-      <Name>GUI</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

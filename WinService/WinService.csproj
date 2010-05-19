@@ -55,10 +55,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AsyncOperation.cs" />
-    <Compile Include="Logger.cs" />
-    <Compile Include="ProcessCaller.cs" />
-    <Compile Include="ProcessWrapper.cs" />
     <Compile Include="ProjectInstaller.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -86,6 +82,10 @@
     <ProjectReference Include="..\Model\Model.csproj">
       <Project>{93C42CEA-23F4-4B68-9D6B-7E31D52780CB}</Project>
       <Name>Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ProcessManager\ProcessManager.csproj">
+      <Project>{A9E5489E-1422-46E0-8853-1A5BADDAB4D8}</Project>
+      <Name>ProcessManager</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

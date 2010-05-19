@@ -50,6 +50,8 @@
             this.btnNewTask = new System.Windows.Forms.Button();
             this.lblNewTask = new System.Windows.Forms.Label();
             this.pnlConfigurations = new System.Windows.Forms.Panel();
+            this.btnDeleteProfile = new System.Windows.Forms.Button();
+            this.btnCreateProfile = new System.Windows.Forms.Button();
             this.btnEditProfile = new System.Windows.Forms.Button();
             this.cobProfiles = new System.Windows.Forms.ComboBox();
             this.lblProfiles = new System.Windows.Forms.Label();
@@ -62,8 +64,6 @@
             this.cmsListView = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.tsmiEdit = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiDelete = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnCreateProfile = new System.Windows.Forms.Button();
-            this.btnDeleteProfile = new System.Windows.Forms.Button();
             this.tsMainMenu.SuspendLayout();
             this.ssStatus.SuspendLayout();
             this.pnlMain.SuspendLayout();
@@ -259,10 +259,32 @@
             this.pnlConfigurations.Size = new System.Drawing.Size(637, 32);
             this.pnlConfigurations.TabIndex = 2;
             // 
+            // btnDeleteProfile
+            // 
+            this.btnDeleteProfile.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnDeleteProfile.Location = new System.Drawing.Point(468, 6);
+            this.btnDeleteProfile.Name = "btnDeleteProfile";
+            this.btnDeleteProfile.Size = new System.Drawing.Size(53, 23);
+            this.btnDeleteProfile.TabIndex = 6;
+            this.btnDeleteProfile.Text = "Delete";
+            this.btnDeleteProfile.UseVisualStyleBackColor = true;
+            this.btnDeleteProfile.Click += new System.EventHandler(this.btnDeleteProfile_Click);
+            // 
+            // btnCreateProfile
+            // 
+            this.btnCreateProfile.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCreateProfile.Location = new System.Drawing.Point(538, 5);
+            this.btnCreateProfile.Name = "btnCreateProfile";
+            this.btnCreateProfile.Size = new System.Drawing.Size(90, 23);
+            this.btnCreateProfile.TabIndex = 5;
+            this.btnCreateProfile.Text = "Create profile";
+            this.btnCreateProfile.UseVisualStyleBackColor = true;
+            this.btnCreateProfile.Click += new System.EventHandler(this.btnCreateProfile_Click);
+            // 
             // btnEditProfile
             // 
             this.btnEditProfile.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnEditProfile.Location = new System.Drawing.Point(438, 6);
+            this.btnEditProfile.Location = new System.Drawing.Point(427, 6);
             this.btnEditProfile.Name = "btnEditProfile";
             this.btnEditProfile.Size = new System.Drawing.Size(35, 23);
             this.btnEditProfile.TabIndex = 4;
@@ -278,7 +300,7 @@
             this.cobProfiles.FormattingEnabled = true;
             this.cobProfiles.Location = new System.Drawing.Point(80, 7);
             this.cobProfiles.Name = "cobProfiles";
-            this.cobProfiles.Size = new System.Drawing.Size(352, 21);
+            this.cobProfiles.Size = new System.Drawing.Size(341, 21);
             this.cobProfiles.TabIndex = 1;
             this.cobProfiles.SelectedIndexChanged += new System.EventHandler(this.btnProfiles_Click);
             // 
@@ -358,28 +380,6 @@
             this.tsmiDelete.Size = new System.Drawing.Size(116, 22);
             this.tsmiDelete.Text = "&Delete";
             this.tsmiDelete.Click += new System.EventHandler(this.tsmiDelete_Click);
-            // 
-            // btnCreateProfile
-            // 
-            this.btnCreateProfile.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCreateProfile.Location = new System.Drawing.Point(553, 5);
-            this.btnCreateProfile.Name = "btnCreateProfile";
-            this.btnCreateProfile.Size = new System.Drawing.Size(75, 23);
-            this.btnCreateProfile.TabIndex = 5;
-            this.btnCreateProfile.Text = "Create New";
-            this.btnCreateProfile.UseVisualStyleBackColor = true;
-            this.btnCreateProfile.Click += new System.EventHandler(this.btnCreateProfile_Click);
-            // 
-            // btnDeleteProfile
-            // 
-            this.btnDeleteProfile.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnDeleteProfile.Location = new System.Drawing.Point(479, 6);
-            this.btnDeleteProfile.Name = "btnDeleteProfile";
-            this.btnDeleteProfile.Size = new System.Drawing.Size(53, 23);
-            this.btnDeleteProfile.TabIndex = 6;
-            this.btnDeleteProfile.Text = "Delete";
-            this.btnDeleteProfile.UseVisualStyleBackColor = true;
-            this.btnDeleteProfile.Click += new System.EventHandler(this.btnDeleteProfile_Click);
             // 
             // MainForm
             // 

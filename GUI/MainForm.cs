@@ -197,7 +197,8 @@ namespace ServiceRunner.GUI
             if (frmSettingsForm == null)
             {
                 frmSettingsForm = new SettingsForm(settings);
-                frmSettingsForm.ShowDialog(this);
+                //frmSettingsForm.ShowDialog(this);
+                frmSettingsForm.Show();
                 frmSettingsForm.FormClosed += delegate { frmSettingsForm = null; };
                 frmSettingsForm.SaveButtonClicked += delegate
                 {
@@ -248,10 +249,10 @@ namespace ServiceRunner.GUI
                         MessageBox.Show(StringFormats.NotValidSettings, StringFormats.WrongValues, MessageBoxButtons.OK);
                     }
                 };
-                frmSettingsForm.CloseButtonClicked += new DetailButtonHandler(delegate
+                frmSettingsForm.CloseButtonClicked += delegate
                 {
                     frmSettingsForm.Close();
-                });
+                };
             }
         }
 

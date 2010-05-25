@@ -38,7 +38,7 @@ namespace ServiceRunner.GUI
         {
             InitializeComponent();
 
-            this.settings = settings;
+            Settings = settings;
 
             SetUIComponentsValues();
         }
@@ -55,14 +55,6 @@ namespace ServiceRunner.GUI
             settings.PathToLogDirectory = dsrLogDirectory.Value;
         }
 
-        private void Fire(Delegate dlg, params object[] pList)
-        {
-            if (dlg != null)
-            {
-                this.BeginInvoke(dlg, pList);
-            }
-        }
-
         private void CreateConfigFile(string path)
         {
             XmlDocument doc = new XmlDocument();
@@ -71,6 +63,14 @@ namespace ServiceRunner.GUI
             XmlElement configuration = doc.CreateElement("configuration");
             doc.AppendChild(configuration);
             doc.Save(path);
+        }
+
+        private void Fire(Delegate dlg, params object[] pList)
+        {
+            if (dlg != null)
+            {
+                this.BeginInvoke(dlg, pList);
+            }
         }
 
         private void btnClose_Click(object sender, EventArgs e)

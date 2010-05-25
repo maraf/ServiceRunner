@@ -6,11 +6,10 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 using ServiceRunner.Model;
+using ServiceRunner.GUI.Controls;
 
 namespace ServiceRunner.GUI
 {
-    public delegate void DetailButtonHandler(object sender, EventArgs e);
-
     /// <summary>
     /// Trida reprezentujici formular pro editaci tasku.
     /// </summary>

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TaskDetail));
             this.lblName = new System.Windows.Forms.Label();
             this.lblRunScript = new System.Windows.Forms.Label();
             this.lblStopScript = new System.Windows.Forms.Label();
@@ -36,12 +37,12 @@
             this.tbxName = new System.Windows.Forms.TextBox();
             this.tbxRunArguments = new System.Windows.Forms.TextBox();
             this.tbxStopArguments = new System.Windows.Forms.TextBox();
-            this.btnClose = new System.Windows.Forms.Button();
-            this.btnSave = new System.Windows.Forms.Button();
-            this.btnSaveAndClose = new System.Windows.Forms.Button();
             this.cbxDisabled = new System.Windows.Forms.CheckBox();
-            this.fsrStopScript = new WindowsGUI.FileSelector();
-            this.fsrRunScript = new WindowsGUI.FileSelector();
+            this.fsrStopScript = new ServiceRunner.GUI.Controls.FileSelector();
+            this.fsrRunScript = new ServiceRunner.GUI.Controls.FileSelector();
+            this.btnSaveAndClose = new System.Windows.Forms.Button();
+            this.btnSave = new System.Windows.Forms.Button();
+            this.btnClose = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblName
@@ -91,63 +92,30 @@
             // 
             // tbxName
             // 
-            this.tbxName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.tbxName.Anchor = ((System.Windows.Forms.AnchorStyles) (((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.tbxName.Location = new System.Drawing.Point(76, 6);
             this.tbxName.Name = "tbxName";
-            this.tbxName.Size = new System.Drawing.Size(365, 20);
+            this.tbxName.Size = new System.Drawing.Size(384, 20);
             this.tbxName.TabIndex = 1;
             // 
             // tbxRunArguments
             // 
-            this.tbxRunArguments.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.tbxRunArguments.Anchor = ((System.Windows.Forms.AnchorStyles) (((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.tbxRunArguments.Location = new System.Drawing.Point(10, 109);
             this.tbxRunArguments.Name = "tbxRunArguments";
-            this.tbxRunArguments.Size = new System.Drawing.Size(431, 20);
+            this.tbxRunArguments.Size = new System.Drawing.Size(450, 20);
             this.tbxRunArguments.TabIndex = 3;
             // 
             // tbxStopArguments
             // 
-            this.tbxStopArguments.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.tbxStopArguments.Anchor = ((System.Windows.Forms.AnchorStyles) (((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.tbxStopArguments.Location = new System.Drawing.Point(10, 213);
             this.tbxStopArguments.Name = "tbxStopArguments";
-            this.tbxStopArguments.Size = new System.Drawing.Size(431, 20);
+            this.tbxStopArguments.Size = new System.Drawing.Size(450, 20);
             this.tbxStopArguments.TabIndex = 5;
-            // 
-            // btnClose
-            // 
-            this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnClose.Location = new System.Drawing.Point(361, 280);
-            this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(75, 23);
-            this.btnClose.TabIndex = 9;
-            this.btnClose.Text = "Close";
-            this.btnClose.UseVisualStyleBackColor = true;
-            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
-            // 
-            // btnSave
-            // 
-            this.btnSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSave.Location = new System.Drawing.Point(280, 280);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(75, 23);
-            this.btnSave.TabIndex = 8;
-            this.btnSave.Text = "Save";
-            this.btnSave.UseVisualStyleBackColor = true;
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
-            // 
-            // btnSaveAndClose
-            // 
-            this.btnSaveAndClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSaveAndClose.Location = new System.Drawing.Point(160, 280);
-            this.btnSaveAndClose.Name = "btnSaveAndClose";
-            this.btnSaveAndClose.Size = new System.Drawing.Size(103, 23);
-            this.btnSaveAndClose.TabIndex = 7;
-            this.btnSaveAndClose.Text = "Save and Close";
-            this.btnSaveAndClose.UseVisualStyleBackColor = true;
-            this.btnSaveAndClose.Click += new System.EventHandler(this.btnSaveAndClose_Click);
             // 
             // cbxDisabled
             // 
@@ -161,39 +129,72 @@
             // 
             // fsrStopScript
             // 
-            this.fsrStopScript.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.fsrStopScript.Anchor = ((System.Windows.Forms.AnchorStyles) (((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.fsrStopScript.Location = new System.Drawing.Point(10, 163);
             this.fsrStopScript.MaximumSize = new System.Drawing.Size(2000, 31);
             this.fsrStopScript.MinimumSize = new System.Drawing.Size(200, 31);
             this.fsrStopScript.Name = "fsrStopScript";
-            this.fsrStopScript.Size = new System.Drawing.Size(431, 31);
+            this.fsrStopScript.Size = new System.Drawing.Size(450, 31);
             this.fsrStopScript.TabIndex = 4;
             this.fsrStopScript.Value = "";
             // 
             // fsrRunScript
             // 
-            this.fsrRunScript.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.fsrRunScript.Anchor = ((System.Windows.Forms.AnchorStyles) (((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.fsrRunScript.Location = new System.Drawing.Point(10, 59);
             this.fsrRunScript.MaximumSize = new System.Drawing.Size(2000, 31);
             this.fsrRunScript.MinimumSize = new System.Drawing.Size(200, 31);
             this.fsrRunScript.Name = "fsrRunScript";
-            this.fsrRunScript.Size = new System.Drawing.Size(431, 31);
+            this.fsrRunScript.Size = new System.Drawing.Size(450, 31);
             this.fsrRunScript.TabIndex = 2;
             this.fsrRunScript.Value = "";
+            // 
+            // btnSaveAndClose
+            // 
+            this.btnSaveAndClose.Anchor = ((System.Windows.Forms.AnchorStyles) ((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSaveAndClose.Location = new System.Drawing.Point(179, 247);
+            this.btnSaveAndClose.Name = "btnSaveAndClose";
+            this.btnSaveAndClose.Size = new System.Drawing.Size(103, 23);
+            this.btnSaveAndClose.TabIndex = 27;
+            this.btnSaveAndClose.Text = "Save and Close";
+            this.btnSaveAndClose.UseVisualStyleBackColor = true;
+            this.btnSaveAndClose.Click += new System.EventHandler(this.btnSaveAndClose_Click);
+            // 
+            // btnSave
+            // 
+            this.btnSave.Anchor = ((System.Windows.Forms.AnchorStyles) ((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSave.Location = new System.Drawing.Point(299, 247);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(75, 23);
+            this.btnSave.TabIndex = 26;
+            this.btnSave.Text = "Save";
+            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            // 
+            // btnClose
+            // 
+            this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles) ((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnClose.Location = new System.Drawing.Point(380, 247);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(75, 23);
+            this.btnClose.TabIndex = 25;
+            this.btnClose.Text = "Close";
+            this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // TaskDetail
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(448, 315);
-            this.Controls.Add(this.fsrStopScript);
-            this.Controls.Add(this.fsrRunScript);
-            this.Controls.Add(this.cbxDisabled);
+            this.ClientSize = new System.Drawing.Size(467, 280);
             this.Controls.Add(this.btnSaveAndClose);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.btnClose);
+            this.Controls.Add(this.fsrStopScript);
+            this.Controls.Add(this.fsrRunScript);
+            this.Controls.Add(this.cbxDisabled);
             this.Controls.Add(this.tbxStopArguments);
             this.Controls.Add(this.tbxRunArguments);
             this.Controls.Add(this.tbxName);
@@ -202,9 +203,10 @@
             this.Controls.Add(this.lblStopScript);
             this.Controls.Add(this.lblRunScript);
             this.Controls.Add(this.lblName);
+            this.Icon = ((System.Drawing.Icon) (resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(456, 330);
+            this.MinimumSize = new System.Drawing.Size(483, 318);
             this.Name = "TaskDetail";
             this.Text = "TaskDetail";
             this.ResumeLayout(false);
@@ -222,11 +224,11 @@
         private System.Windows.Forms.TextBox tbxName;
         private System.Windows.Forms.TextBox tbxRunArguments;
         private System.Windows.Forms.TextBox tbxStopArguments;
-        private System.Windows.Forms.Button btnClose;
-        private System.Windows.Forms.Button btnSave;
-        private System.Windows.Forms.Button btnSaveAndClose;
         private System.Windows.Forms.CheckBox cbxDisabled;
-        private WindowsGUI.FileSelector fsrRunScript;
-        private WindowsGUI.FileSelector fsrStopScript;
+        private ServiceRunner.GUI.Controls.FileSelector fsrRunScript;
+        private ServiceRunner.GUI.Controls.FileSelector fsrStopScript;
+        private System.Windows.Forms.Button btnSaveAndClose;
+        private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.Button btnClose;
     }
 }

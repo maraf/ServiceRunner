@@ -6,7 +6,7 @@ using System.Data;
 using System.Text;
 using System.Windows.Forms;
 
-namespace WindowsGUI
+namespace ServiceRunner.GUI.Controls
 {
     /// <summary>
     /// Komponenta pro vyber souboru

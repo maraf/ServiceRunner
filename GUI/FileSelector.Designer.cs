@@ -1,4 +1,4 @@
-﻿namespace WindowsGUI
+﻿namespace ServiceRunner.GUI.Controls
 {
     partial class FileSelector
     {
@@ -35,8 +35,8 @@
             // 
             // btnOpenFile
             // 
-            this.btnOpenFile.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnOpenFile.Location = new System.Drawing.Point(125, 5);
+            this.btnOpenFile.Anchor = ((System.Windows.Forms.AnchorStyles) ((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnOpenFile.Location = new System.Drawing.Point(282, 5);
             this.btnOpenFile.Name = "btnOpenFile";
             this.btnOpenFile.Size = new System.Drawing.Size(75, 23);
             this.btnOpenFile.TabIndex = 0;
@@ -46,13 +46,13 @@
             // 
             // tbxOpenFile
             // 
-            this.tbxOpenFile.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.tbxOpenFile.Anchor = ((System.Windows.Forms.AnchorStyles) (((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.tbxOpenFile.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.tbxOpenFile.Location = new System.Drawing.Point(0, 7);
             this.tbxOpenFile.Name = "tbxOpenFile";
             this.tbxOpenFile.ReadOnly = true;
-            this.tbxOpenFile.Size = new System.Drawing.Size(113, 20);
+            this.tbxOpenFile.Size = new System.Drawing.Size(276, 20);
             this.tbxOpenFile.TabIndex = 1;
             // 
             // ofdOpenFile
@@ -68,7 +68,7 @@
             this.MaximumSize = new System.Drawing.Size(2000, 31);
             this.MinimumSize = new System.Drawing.Size(200, 31);
             this.Name = "FileSelector";
-            this.Size = new System.Drawing.Size(200, 31);
+            this.Size = new System.Drawing.Size(357, 31);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -7,6 +7,7 @@ using System.Text;
 using System.Windows.Forms;
 using ServiceRunner.Model;
 using ServiceRunner.Util;
+using ServiceRunner.GUI.Controls;
 
 namespace ServiceRunner.GUI
 {

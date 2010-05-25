@@ -11,20 +11,37 @@ using System.Threading;
 using ServiceRunner.Loader;
 using ServiceRunner.Model;
 using ServiceRunner.Util;
+using System.Reflection;
 
 namespace ServiceRunner
 {
+    /// <summary>
+    /// Windows sluzba zajistujici spousteni procesu
+    /// </summary>
     public partial class WinService : ServiceBase
     {
         private Logger log;
         private ProcessManager manager;
+        private Settings settings;
 
         public WinService()
         {
             InitializeComponent();
 
-            log = new Logger(true);
-            manager = new ProcessManager();
+            string path = "Settings.resx";
+#if DEBUG
+            // Osklivy zpusob jak pro spousteni z VS najit soubor Settings.resx v ouputu GUI projektu!!
+            string asspath = Assembly.GetExecutingAssembly().Location;
+            for (int i = 0; i < 4; i++)
+            {
+                asspath = asspath.Substring(0, asspath.LastIndexOf('\\'));
+            }
+            path = asspath + @"\GUI\bin\Debug\" + path;
+#endif
+            settings = new Settings(path);
+
+            log = new Logger(settings.PathToLogDirectory, true); AddNote("Log created");
+            manager = new ProcessManager(settings);
         }
 
         protected override void OnStart(string[] args)
@@ -48,7 +65,7 @@ namespace ServiceRunner
             manager.Stop();
         }
 
-        #region LOGOVANI
+        #region ZJEDNODUSENE LOGOVANI
         private void AddError(string message)
         {
             log.AddError(this.GetType(), message);

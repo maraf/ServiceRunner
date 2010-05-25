@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.Resources;
 using System.Text;
 using System.Xml;
 
@@ -319,5 +321,55 @@ namespace ServiceRunner.Model
         }
 
         #endregion
+    }
+
+    /// <summary>
+    /// Pro uchovani cest ke konfiguracnim souborum
+    /// </summary>
+    public class Settings
+    {
+        private string pathToConfigFile;
+        public string PathToConfigFile
+        {
+            get { return pathToConfigFile; }
+            set { pathToConfigFile = value; }
+        }
+
+        private string pathToLogDirectory;
+        public string PathToLogDirectory
+        {
+            get { return pathToLogDirectory; }
+            set { pathToLogDirectory = value; }
+        }
+
+        public Settings(string path) 
+        {
+            LoadFromResource(path);
+        }
+
+        public void SaveToResource(string path)
+        {
+            IResourceWriter rw = new ResXResourceWriter(path);
+            rw.AddResource("PathToConfigFile", pathToConfigFile);
+            rw.AddResource("PathToLogDirectory", pathToLogDirectory);
+            rw.Close();
+        }
+
+        public void LoadFromResource(string path)
+        {
+            IResourceReader rr = new ResXResourceReader(path);
+            IDictionaryEnumerator en = rr.GetEnumerator();
+            while (en.MoveNext())
+            {
+                if (en.Key.Equals("PathToConfigFile"))
+                {
+                    PathToConfigFile = (string) en.Value;
+                } else if(en.Key.Equals("PathToLogDirectory")) 
+                {
+                    PathToLogDirectory = (string) en.Value;
+                }
+            }
+            rr.Close();
+        }
     }
 }

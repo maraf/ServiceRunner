@@ -21,32 +21,32 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_C5DA0805B0E9623C4D08F5431AB6ADE4"
-        "OwnerKey" = "8:_EA5C3728F3B5465596087780C57F83D0"
+        "MsmKey" = "8:_79525B19CAF54D44A514F65BEDE9DFCE"
+        "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_C5DA0805B0E9623C4D08F5431AB6ADE4"
-        "OwnerKey" = "8:_F1EFC662578C0333E1AE38C071B970F0"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_C5DA0805B0E9623C4D08F5431AB6ADE4"
+        "MsmKey" = "8:_A38C2D04EE5C8C916210DCC296E1A83B"
         "OwnerKey" = "8:_4AB26B91194244C39E3FAC1385B1ACEF"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_DCB3DDA9C28A7F22434650D4050BB38F"
+        "OwnerKey" = "8:_4AB26B91194244C39E3FAC1385B1ACEF"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_DCB3DDA9C28A7F22434650D4050BB38F"
+        "OwnerKey" = "8:_A38C2D04EE5C8C916210DCC296E1A83B"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_EA5C3728F3B5465596087780C57F83D0"
         "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_F1EFC662578C0333E1AE38C071B970F0"
-        "OwnerKey" = "8:_4AB26B91194244C39E3FAC1385B1ACEF"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -58,25 +58,25 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_C5DA0805B0E9623C4D08F5431AB6ADE4"
+        "OwnerKey" = "8:_EA5C3728F3B5465596087780C57F83D0"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_A38C2D04EE5C8C916210DCC296E1A83B"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_DCB3DDA9C28A7F22434650D4050BB38F"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
         "OwnerKey" = "8:_4AB26B91194244C39E3FAC1385B1ACEF"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_F1EFC662578C0333E1AE38C071B970F0"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_EA5C3728F3B5465596087780C57F83D0"
         "MsmSig" = "8:_UNDEFINED"
         }
     }
@@ -97,6 +97,14 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+            }
         }
         "Release"
         {
@@ -113,6 +121,27 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.0,Profile=Client"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4 Client Profile (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.0,Profile=Client"
+                    }
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:Microsoft.Windows.Installer.3.1"
+                    {
+                    "Name" = "8:Windows Installer 3.1"
+                    "ProductCode" = "8:Microsoft.Windows.Installer.3.1"
+                    }
+                }
+            }
         }
     }
     "Deployable"
@@ -190,7 +219,7 @@
                 {
                 "Name" = "8:.NET Framework"
                 "Message" = "8:[VSDNETMSG]"
-                "Version" = "8:3.5.30729"
+                "FrameworkVersion" = "8:.NETFramework,Version=v2.0"
                 "AllowLaterVersions" = "11:FALSE"
                 "InstallUrl" = "8:http://go.microsoft.com/fwlink/?LinkId=76617"
                 }
@@ -198,20 +227,40 @@
         }
         "File"
         {
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_C5DA0805B0E9623C4D08F5431AB6ADE4"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_79525B19CAF54D44A514F65BEDE9DFCE"
+            {
+            "SourcePath" = "8:..\\GUI\\Resources\\servicerunning.ico"
+            "TargetName" = "8:ServiceRunner.ico"
+            "Tag" = "8:"
+            "Folder" = "8:_95255D54A47F409FB57A48C2713D8330"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_A38C2D04EE5C8C916210DCC296E1A83B"
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:Model, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
+            "AssemblyAsmDisplayName" = "8:ProcessManager, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_C5DA0805B0E9623C4D08F5431AB6ADE4"
+                    "_A38C2D04EE5C8C916210DCC296E1A83B"
                     {
-                    "Name" = "8:Model.dll"
+                    "Name" = "8:ProcessManager.dll"
                     "Attributes" = "3:512"
                     }
                 }
-            "SourcePath" = "8:Model.dll"
+            "SourcePath" = "8:ProcessManager.dll"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_95255D54A47F409FB57A48C2713D8330"
@@ -229,20 +278,20 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_F1EFC662578C0333E1AE38C071B970F0"
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_DCB3DDA9C28A7F22434650D4050BB38F"
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:ProcessManager, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
+            "AssemblyAsmDisplayName" = "8:Model, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_F1EFC662578C0333E1AE38C071B970F0"
+                    "_DCB3DDA9C28A7F22434650D4050BB38F"
                     {
-                    "Name" = "8:ProcessManager.dll"
+                    "Name" = "8:Model.dll"
                     "Attributes" = "3:512"
                     }
                 }
-            "SourcePath" = "8:ProcessManager.dll"
+            "SourcePath" = "8:Model.dll"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_95255D54A47F409FB57A48C2713D8330"
@@ -299,9 +348,9 @@
             }
             "{3C67513D-01DD-4637-8A68-80971EB9504F}:_95255D54A47F409FB57A48C2713D8330"
             {
-            "DefaultLocation" = "8:[ProgramFilesFolder][Manufacturer]\\[ProductName]"
+            "DefaultLocation" = "8:[ProgramFilesFolder][ProductName]"
             "Name" = "8:#1925"
-            "AlwaysCreate" = "11:FALSE"
+            "AlwaysCreate" = "11:TRUE"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Property" = "8:TARGETDIR"
@@ -318,6 +367,17 @@
             "Property" = "8:ProgramMenuFolder"
                 "Folders"
                 {
+                    "{9EF0B969-E518-4E46-987F-47570745A589}:_2DEABB56A14D4823957E05A5BD65B497"
+                    {
+                    "Name" = "8:ServiceRunner"
+                    "AlwaysCreate" = "11:FALSE"
+                    "Condition" = "8:"
+                    "Transitive" = "11:FALSE"
+                    "Property" = "8:_74438C073F2140DDA9A3B28F9D9D6E8A"
+                        "Folders"
+                        {
+                        }
+                    }
                 }
             }
         }
@@ -335,24 +395,25 @@
         "Product"
         {
         "Name" = "8:Microsoft Visual Studio"
-        "ProductName" = "8:Installer"
-        "ProductCode" = "8:{1C72C299-9192-4841-A139-1F02E8018001}"
-        "PackageCode" = "8:{D9D23A71-9A77-4A86-BFD3-95ACF5B228BA}"
+        "ProductName" = "8:ServiceRunner"
+        "ProductCode" = "8:{A765EFA4-DACA-4F43-B007-5053AC977584}"
+        "PackageCode" = "8:{CE7F30FA-7CCA-49EC-AEB3-318CDAAEB0A2}"
         "UpgradeCode" = "8:{FE75188C-55DE-497E-A73F-DF746FC7D6F0}"
+        "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
-        "RemovePreviousVersions" = "11:FALSE"
+        "RemovePreviousVersions" = "11:TRUE"
         "DetectNewerInstalledVersion" = "11:TRUE"
         "InstallAllUsers" = "11:FALSE"
-        "ProductVersion" = "8:1.0.0"
-        "Manufacturer" = "8:Default Company Name"
+        "ProductVersion" = "8:1.0.1"
+        "Manufacturer" = "8:Neptuo Dev"
         "ARPHELPTELEPHONE" = "8:"
-        "ARPHELPLINK" = "8:"
-        "Title" = "8:Installer"
+        "ARPHELPLINK" = "8:http://dev.neptuo.com/support"
+        "Title" = "8:ServiceRunner Installer"
         "Subject" = "8:"
-        "ARPCONTACT" = "8:Default Company Name"
-        "Keywords" = "8:"
-        "ARPCOMMENTS" = "8:"
-        "ARPURLINFOABOUT" = "8:"
+        "ARPCONTACT" = "8:Marek Fišera"
+        "Keywords" = "8:ServiceRunner"
+        "ARPCOMMENTS" = "8:For more information, please visit http://dev.neptuo.com"
+        "ARPURLINFOABOUT" = "8:http://dev.neptuo.com"
         "ARPPRODUCTICON" = "8:"
         "ARPIconIndex" = "3:0"
         "SearchPath" = "8:"
@@ -456,6 +517,34 @@
         }
         "Shortcut"
         {
+            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_512531D0414A4410B71196C1960EF0DF"
+            {
+            "Name" = "8:ServiceRunner"
+            "Arguments" = "8:"
+            "Description" = "8:"
+            "ShowCmd" = "3:1"
+            "IconIndex" = "3:0"
+            "Transitive" = "11:FALSE"
+            "Target" = "8:_EA5C3728F3B5465596087780C57F83D0"
+            "Folder" = "8:_2DEABB56A14D4823957E05A5BD65B497"
+            "WorkingFolder" = "8:_95255D54A47F409FB57A48C2713D8330"
+            "Icon" = "8:_79525B19CAF54D44A514F65BEDE9DFCE"
+            "Feature" = "8:"
+            }
+            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_D007D8E9C0B84C20836391EEA272C05E"
+            {
+            "Name" = "8:ServiceRunner"
+            "Arguments" = "8:"
+            "Description" = "8:"
+            "ShowCmd" = "3:1"
+            "IconIndex" = "3:0"
+            "Transitive" = "11:FALSE"
+            "Target" = "8:_EA5C3728F3B5465596087780C57F83D0"
+            "Folder" = "8:_29C5C8331ED745409EBAE27972593ABB"
+            "WorkingFolder" = "8:_95255D54A47F409FB57A48C2713D8330"
+            "Icon" = "8:_79525B19CAF54D44A514F65BEDE9DFCE"
+            "Feature" = "8:"
+            }
         }
         "UserInterface"
         {
@@ -885,7 +974,7 @@
             }
             "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_EA5C3728F3B5465596087780C57F83D0"
             {
-            "SourcePath" = "8:..\\GUI\\obj\\Debug\\WindowsGUI.exe"
+            "SourcePath" = "8:..\\GUI\\obj\\Debug\\ServiceRunner.GUI.exe"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_95255D54A47F409FB57A48C2713D8330"

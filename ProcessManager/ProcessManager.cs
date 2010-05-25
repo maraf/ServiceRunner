@@ -12,7 +12,6 @@ namespace ServiceRunner.Util
 {
     /// <summary>
     /// Obaluje nacteni a spusteni cele konfigurace.
-    /// TODO: ulozeni informaci o umisteni konfigurace a logu!
     /// </summary>
     public class ProcessManager
     {
@@ -61,33 +60,50 @@ namespace ServiceRunner.Util
             set { timePattern = value; }
         }
 
-        public ProcessManager()
+        /// <summary>
+        /// Konfigurace
+        /// </summary>
+        private Settings settings;
+        public Settings Settings
         {
-            log = new Logger(true);
+            get { return settings; }
+        }
+
+        public ProcessManager(Settings settings)
+        {
+            log = new Logger(settings.PathToLogDirectory ,true);
             runProcessWrappers = new Dictionary<string, ProcessWrapper>();
             stopProcessWrappers = new Dictionary<string, ProcessWrapper>();
-            // URCITE HODIT DO SETTINGS.RESX
-            rootPath = @"C:\Temp";
-            pathToConfig = rootPath + @"\test.xml";
+            this.settings = settings;
+
+            rootPath = settings.PathToLogDirectory;
+            pathToConfig = settings.PathToConfigFile;
             taskLogFileNamePattern = @"{0}\{1:yyyy-MM-dd}_{2}.log";
             timePattern = "{0:HH:mm:ss,ffff}";
         }
 
+        /// <summary>
+        /// Nacte na spusti vsechny sluzby
+        /// </summary>
         public void Start() 
         {
             loader = new XmlLoader(pathToConfig);
             StartAllEnabledProfiles();
         }
 
+        /// <summary>
+        /// Zastavi vsechny sluzby
+        /// </summary>
         public void Stop()
         {
-            // Spustit vsechny stop scripty,
             StopAllEnabledProfiles();
-            // a po chvili zabit zijici procesy
-            Thread.Sleep(8000);
+            Thread.Sleep(12000);
             TerminateAllRunnig();
         }
 
+        /// <summary>
+        /// Realizuje spusteni vsech spoustecich procesu
+        /// </summary>
         private void StartAllEnabledProfiles()
         {
             if (!Directory.Exists(rootPath + @"\profiles"))
@@ -134,6 +150,9 @@ namespace ServiceRunner.Util
             }
         }
         
+        /// <summary>
+        /// Realizuje spusteni vsech ukoncovacich procesu
+        /// </summary>
         private void StopAllEnabledProfiles() 
         {
             foreach (Profile p in loader.Configuration.Profiles)
@@ -164,6 +183,9 @@ namespace ServiceRunner.Util
             }
         }
 
+        /// <summary>
+        /// "Zabije" vsechny procesy z <code>runProcessWrappers</code> a <code>stopProcessWrappers</code>
+        /// </summary>
         private void TerminateAllRunnig()
         {
             foreach (KeyValuePair<string, ProcessWrapper> pw in runProcessWrappers)
@@ -182,7 +204,7 @@ namespace ServiceRunner.Util
             }
         }
 
-        #region LOGOVANI
+        #region ZJEDNODUSENE LOGOVANI
         private void AddError(string message)
         {
             log.AddError(this.GetType(), message);

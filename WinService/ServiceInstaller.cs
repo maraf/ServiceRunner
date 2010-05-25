@@ -10,7 +10,6 @@ namespace ServiceRunner.Util
     /// </summary>
     public class ServiceInstaller
     {
-        #region DLLImport
         [DllImport("advapi32.dll")]
         public static extern IntPtr OpenSCManager(string lpMachineName, string lpSCDB, int scParameter);
         [DllImport("Advapi32.dll")]
@@ -27,7 +26,6 @@ namespace ServiceRunner.Util
         public static extern int DeleteService(IntPtr SVHANDLE);
         [DllImport("kernel32.dll")]
         public static extern int GetLastError();
-        #endregion DLLImport
 
         /// <summary>
         /// This method installs and runs the service in the service control manager.

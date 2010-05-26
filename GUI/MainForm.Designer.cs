@@ -191,7 +191,7 @@
             this.tsbHomepage.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbHomepage.Name = "tsbHomepage";
             this.tsbHomepage.Size = new System.Drawing.Size(23, 22);
-            this.tsbHomepage.Text = "toolStripButton1";
+            this.tsbHomepage.Text = "Open project home page, http://dev.neptuo.com";
             this.tsbHomepage.Click += new System.EventHandler(this.tsbHomepage_Click);
             // 
             // ssStatus

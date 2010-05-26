@@ -33,6 +33,7 @@
             // 
             // winServiceProcessInstaller
             // 
+            this.winServiceProcessInstaller.Account = System.ServiceProcess.ServiceAccount.LocalSystem;
             this.winServiceProcessInstaller.Password = null;
             this.winServiceProcessInstaller.Username = null;
             // 
@@ -41,6 +42,7 @@
             this.winServiceInstaller.Description = "Windows service for ServiceRunner";
             this.winServiceInstaller.DisplayName = "ServiceRunner";
             this.winServiceInstaller.ServiceName = "ServiceRunner";
+            this.winServiceInstaller.StartType = System.ServiceProcess.ServiceStartMode.Automatic;
             // 
             // ProjectInstaller
             // 

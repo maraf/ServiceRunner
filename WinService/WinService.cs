@@ -38,6 +38,14 @@ namespace ServiceRunner
             }
             path = asspath + @"\GUI\bin\Debug\" + path;
 #endif
+#if TRACE
+            string asspath = Assembly.GetExecutingAssembly().Location;
+            for (int i = 0; i < 1; i++)
+            {
+                asspath = asspath.Substring(0, asspath.LastIndexOf('\\'));
+            }
+            path = asspath + @"\" + path;
+#endif
             settings = new Settings(path);
 
             log = new Logger(settings.PathToLogDirectory, true); AddNote("Log created");

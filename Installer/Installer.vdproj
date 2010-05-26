@@ -104,6 +104,19 @@
             "PrerequisitesLocation" = "2:1"
             "Url" = "8:"
             "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.0,Profile=Client"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4 Client Profile (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.0,Profile=Client"
+                    }
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:Microsoft.Windows.Installer.3.1"
+                    {
+                    "Name" = "8:Windows Installer 3.1"
+                    "ProductCode" = "8:Microsoft.Windows.Installer.3.1"
+                    }
+                }
             }
         }
         "Release"
@@ -332,6 +345,29 @@
         }
         "FileType"
         {
+            "{5EB83D71-FA18-4901-BE56-DE22E13CC478}:_0F4A360BE1104529A2CE8FC3A079AF26"
+            {
+            "Name" = "8:New Document Type #1"
+            "Description" = "8:ServiceRunner Configuration File"
+            "Extensions" = "8:securo"
+            "MIME" = "8:"
+            "Icon" = "8:"
+            "IconIndex" = "3:0"
+                "Command"
+                {
+                "Command" = "8:_EA5C3728F3B5465596087780C57F83D0"
+                }
+                "Verbs"
+                {
+                    "{95C0C507-CBF0-42B8-B119-07219E384A4A}:_65DF8F9F2BD344D3BDEC891A64ECF58F"
+                    {
+                    "Command" = "8:&Open"
+                    "Verb" = "8:open"
+                    "Arguments" = "8:\"%1\""
+                    "Order" = "3:0"
+                    }
+                }
+            }
         }
         "Folder"
         {
@@ -397,7 +433,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:ServiceRunner"
         "ProductCode" = "8:{A765EFA4-DACA-4F43-B007-5053AC977584}"
-        "PackageCode" = "8:{CE7F30FA-7CCA-49EC-AEB3-318CDAAEB0A2}"
+        "PackageCode" = "8:{C34ED574-3446-4833-8036-142E09774810}"
         "UpgradeCode" = "8:{FE75188C-55DE-497E-A73F-DF746FC7D6F0}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
@@ -946,7 +982,7 @@
         {
             "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_4AB26B91194244C39E3FAC1385B1ACEF"
             {
-            "SourcePath" = "8:..\\WinService\\obj\\Debug\\ServiceRunner.exe"
+            "SourcePath" = "8:..\\WinService\\obj\\Release\\ServiceRunner.exe"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_95255D54A47F409FB57A48C2713D8330"
@@ -974,7 +1010,7 @@
             }
             "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_EA5C3728F3B5465596087780C57F83D0"
             {
-            "SourcePath" = "8:..\\GUI\\obj\\Debug\\ServiceRunner.GUI.exe"
+            "SourcePath" = "8:..\\GUI\\obj\\Release\\ServiceRunner.GUI.exe"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_95255D54A47F409FB57A48C2713D8330"
